@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/carrinhoTicktes.js"></script>
+</head>
+
+<body>
+
+    <div th:insert="~{fragments/navbar :: nav}"></div>
+
+    <div class="title-bar">
+        <div class="centralizar">Quadro de tickets</div>
+    </div>
+
+    <div class="container-quadro-tickes">
+
+        <div class="container-geral-tickets">
+
+            <div th:each="produto : ${produtosAtivos}" th:class="${produto.categoria} + ' ticket'"
+                th:id="${produto.id}">
+                <p th:text="${produto.descricao}" class="nomeProduto"></p>
+                <span>R$ <span th:text="${produto.preco}" class="precoProduto"></span></span>
+            </div>
+
+        </div>
+
+        <side>
+            <div class="headerCabecalho centralizar">CARRINHO</div>
+            <div id="total" class="headerCabecalho">R$ 0.00</div>
+            <div id="btnCarrinho" class="headerCabecalho">
+                <button id="btnLimpar">Limpar</button>
+                <button id="btnFinalizar">Finalizar Venda</button>
+            </div>
+            <div id="itensCarrinho"></div>
+        </side>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

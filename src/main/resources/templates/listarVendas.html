@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Vendas</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <!-- <script src="/js/xxx.js"></script> -->
+</head>
+
+<body>
+
+    <div th:insert="~{fragments/navbar :: nav}"></div>
+
+    <div th:if="${mensagem}" style="color: green;">
+        <p th:text="${mensagem}"></p>
+    </div>
+
+    <h2>Lista de Vendas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>N° Venda</th>
+                <th>Data de Venda</th>
+                <th>Valor Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="venda : ${vendas}">
+                <td th:text="${venda.id}"></td>
+                <td th:text="${#dates.format(venda.dataVenda, 'dd/MM/yyyy HH:mm:ss')}"></td>
+                <td th:text="${venda.valorVenda}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

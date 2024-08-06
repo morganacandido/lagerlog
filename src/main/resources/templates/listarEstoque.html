@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/listarUsuario.js"></script>
+</head>
+
+<body>
+
+    <div th:insert="~{fragments/navbar :: nav}"></div>
+
+    <div class="title-bar-cad">
+        <a href="estoque/registros" class="nav-btn-cad">Registro de Estoque</a>
+        <a href="estoque/cadastrar" class="nav-btn-cad">Entrada em Estoque</a>
+        <a href="estoque/ajustar" class="nav-btn-cad">Ajuste de Estoque</a>
+    </div>
+
+    <div th:if="${mensagem}" style="color: green;">
+        <p th:text="${mensagem}"></p>
+    </div>
+
+    <h2>Estoque</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${estoqueAgrupado}">
+                <td th:text="${item.produto.descricao}">Produto</td>
+                <td th:text="${item.quantidade + ' ' + item.produto.unidade}">Quantidade</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

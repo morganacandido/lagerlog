@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/listarUsuario.js"></script>
+</head>
+
+<body>
+
+    <div th:insert="~{fragments/navbar :: nav}"></div>
+
+    <div th:if="${mensagem}" style="color: green;">
+        <p th:text="${mensagem}"></p>
+    </div>
+
+    <h2>Lista de Usuários</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <!-- <th>ID</th> -->
+                <th>Usuário</th>
+                <th>Nome do Usuário</th>
+                <th>Grupo</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="usuario : ${listaUsuarios}">
+                <!-- <td th:text="${usuario.id}"></td> -->
+                <td th:text="${usuario.usuario}"></td>
+                <td th:text="${usuario.nome}"></td>
+                <td th:text="${usuario.grupo}"></td>
+                <td th:text="${usuario.status ? 'Habilitado' : 'Desabilitado'}"></td>
+                <td>
+                    <!-- <a th:href="@{editar(id=${usuario.id})}" >Editar</a> -->
+                    <button class="btnUpdate" th:data-id=${usuario.id}>Editar</button>
+                    <button class="btnDelete" th:data-id=${usuario.id}>Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Novo Usuário</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+
+<body>
+
+    <div th:insert="~{fragments/navbar :: nav}"></div>
+
+    <h2>Criar Novo Usuário</h2>
+    <form action="/usuario" method="post">
+
+        <label for="nome">Usuário de acesso:</label>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="grupo">Grupo:</label>
+        <select id="grupo" name="grupo" required>
+            <option value="">Selecione o grupo</option>
+            <option value="Operador">Operador</option>
+            <option value="Supervisor">Supervisor</option>
+            <option value="Adiministrador">Adiministrador</option>
+        </select><br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required><br><br>
+
+        <label for="senha">Repetir Senha:</label>
+        <input type="password" required><br><br>
+
+        <input type="submit" value="Criar">
+    </form>
+
+</body>
+
+</html>

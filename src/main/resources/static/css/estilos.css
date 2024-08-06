@@ -1,0 +1,242 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #D9D9D9; /* Cor de fundo para o resto da página */
+}
+
+.nav-btn {
+    background-color: #F4EC29;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 135px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #FBB48D; 
+    color: black; 
+}
+
+.title-bar {
+    background-color: #F4EC29;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+
+.title-bar-caixa {
+    margin-top: 3px;
+    padding: 6px;
+    background-color: #F4EC29;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title-bar-cad {
+    margin-top: 3px;
+    padding: 6px;
+    background-color: #F4EC29;
+    align-items: flex-start;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    align-content: stretch;
+}
+
+.container-quadro-tickes {
+    display: flex;
+    height: calc(100vh - 100px);
+    align-content: flex-start;
+}
+
+.ticket {
+    background-color: #748c14;  
+    width: 10%;
+    min-width: 100px;
+    min-height: 100px;
+    margin: 5px;
+    text-align: center; /* Centraliza o texto  */
+    padding: 10px; /* preenchimento interno */
+    /* Centraliza o conteúdo verticalmente */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ticket p {
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.promocional{
+    background-color: #aaaaaa;  
+}
+
+.container-geral-tickets {
+    padding: 20px;
+    background-color: #D9D9D9;
+    margin: 3px;
+    /* Centraliza o conteúdo verticalmente */
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    float: left;
+}
+
+.carrinho {
+    width: 15%;
+    float: right; /* Para permitir que o carrinho fique ao lado */
+}
+
+.container-geral-estoque {
+    margin-top: 20px; /* Adiciona uma margem superior */
+    margin-bottom: 20px; /* Adiciona uma margem inferior */
+    margin-left: auto; /* Margem à esquerda */
+    margin-right: auto; /* Margem à direita */
+    width: calc(90% - 40px); /* 90% da largura da tela menos 40px (20px de margem à esquerda e 20px de margem à direita) */
+    max-width: 1200px; /* Define uma largura máxima para o container */
+    height: 70vh; /* 80% da altura da viewport */
+    padding: 20px;
+    background-color: white;
+}
+
+.container-geral-caixa {
+    margin-top: 20px; /* Adiciona uma margem superior */
+    margin-bottom: 20px; /* Adiciona uma margem inferior */
+    margin-left: auto; /* Margem à esquerda */
+    margin-right: auto; /* Margem à direita */
+    width: calc(90% - 40px); /* 90% da largura da tela menos 40px (20px de margem à esquerda e 20px de margem à direita) */
+    max-width: 1200px; /* Define uma largura máxima para o container */
+    height: 70vh; /* 80% da altura da viewport */
+    padding: 20px;
+    background-color: white;
+}
+
+.centralizar {
+    flex: 1; /* Ocupa o espaço restante */
+    text-align: center; /* Centraliza o texto */
+}
+
+
+.pesquisar-container {
+    display: flex;
+    align-items: center;
+}
+
+.pesquisar-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.btn-pesquisar {
+    background-color: #F4EC29;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.nav-btn-caixa {
+    background-color: black ;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 135px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.nav-btn-cad {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 135px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 14px;
+    cursor: pointer;
+}
+
+.nav-btn-cad:hover {
+    background-color: #FBB48D; 
+    color: white; 
+}
+
+.nav-btn-caixa:hover {
+    background-color: #FBB48D; 
+    color: white; 
+}
+
+#btnCarrinho{
+    display: flex;
+    justify-content: space-between;
+}
+
+side {
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical apenas quando necessário */
+    max-height: 80vh;
+    background-color: #a49a9c;
+}
+
+.headerCabecalho{
+    height: 30px;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    
+}
+
+.detalhes-produto{
+    background-color: #cac372;
+    border: 2px solid #000000;
+    margin-bottom: 2px;
+}
+
+#btnCarrinho{
+    margin-bottom: 5px;
+}
+
+.quantidade{
+    font-weight: bold;
+}
+
+#buttonCarrinho{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}

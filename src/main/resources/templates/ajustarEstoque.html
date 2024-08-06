@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Estoque</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/estoque.js"></script>
+</head>
+
+<body>
+
+    <div th:insert="~{fragments/navbar :: nav}"></div>
+
+    <h2>Ajuste de Estoque</h2>
+    <form action="/estoque/ajustar" method="post">
+        
+        <label for="produto">Produto:</label>
+        <select id="produto" name="produto" required>
+            <option value="" disabled selected>Selecione um produto</option>
+            <option th:each="produto : ${produtos}"
+                    th:value="${produto.id}"
+                    th:text="${produto.descricao}"
+                    th:data-unidade-cadastro="${produto.unidade}">Produto</option>
+        </select><br><br>
+
+        <label for="unidadeCadastro">Unidade de cadastro:</label>
+        <input type="text" id="unidadeCadastro" name="unidadeCasdastro" readonly required><br><br>
+
+        <label for="quantidade">Quantidade:</label>
+        <input type="text" id="quantidade" name="quantidade" required><br><br>
+        
+        <label for="observacao">Observação:</label>
+        <input type="text" id="observacao" name="observacao" required><br><br>
+
+        <input type="submit" value="CONFIRMAR AJUSTE">
+    </form>
+
+</body>
+
+</html>

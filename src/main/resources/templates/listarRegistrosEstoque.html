@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/listarUsuario.js"></script>
+</head>
+
+<body>
+
+    <div th:insert="~{fragments/navbar :: nav}"></div>
+
+    <h2>Registros de Estoque</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Tipo</th>
+                <th>Quantidade</th>
+                <th>Data de cadastro</th>
+                <th>Observação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${estoque}">
+                <td th:text="${item.produto.descricao}"></td>
+                <td th:text="${item.tipo}"></td>
+                <td th:text="${item.quantidade + ' ' + item.produto.unidade}"></td>
+                <td th:text="${item.dataCadastro}"></td>
+                <td th:text="${item.observacao}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

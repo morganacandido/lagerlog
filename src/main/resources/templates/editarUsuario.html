@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Dados do Usuário</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<div th:insert="~{fragments/navbar :: nav}"></div>
+
+<body>
+    <h2>Alterar Dados do Usuário</h2>
+    <form th:object="${usuario}" action="/usuario/editar" method="post">
+
+        <input type="hidden" id="id" name="id" th:field="*{id}">
+
+        <label for="usuario">Usuário:</label>
+        <input type="text" id="usuario" name="usuario" th:field="*{usuario}" required><br><br>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" th:field="*{nome}" required><br><br>
+
+        <label for="grupo">Grupo:</label>
+        <select id="grupo" name="grupo" th:field="*{grupo}" required>
+            <option value="Operador">Operador</option>
+            <option value="Supervisor">Supervisor</option>
+            <option value="Adiministrador">Adiministrador</option>
+        </select><br><br>
+
+        <label for="status">Status:</label>
+        <input type="checkbox" id="status" name="status" th:field="*{status}">Ativo<br><br>
+
+        <input type="checkbox" name="alterarSenha">Alterar senha<br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" value="***" required><br><br>
+
+        <label for="novasenha">Repetir Senha:</label>
+        <input type="password" id="novasenha" value="***" required><br><br>
+
+        <input id="btnAtualizar" type="submit" value="Alterar">
+    </form>
+</body>
+
+</html>
