@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercadorias</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/listarProduto.js"></script>
+</head>
+
+<body>
+
+    <div th:insert="~{fragments/navbar :: nav}"></div>
+    <div th:insert="~{fragments/navbarCadastros :: navCadastros}"></div>
+
+    <div th:if="${mensagem}" style="color: green;">
+        <p th:text="${mensagem}"></p>
+    </div>
+
+    <h2>Mercadorias</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Marca</th>
+            <th>Fornecedor</th>
+            <th>Unidade</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+            <th>Ponto de Suprimento</th>
+            <th>Tickets</th>
+            <th>Categoria</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="produto : ${listaProdutos}">
+            <td th:text="${produto.descricao}"></td>
+            <td th:text="${produto.marca}"></td>
+            <td th:text="${produto.fornecedor}"></td>
+            <td th:text="${produto.unidade}"></td>
+            <td th:text="${produto.quantidade}"></td>
+            <td th:text="${'R$' + produto.preco}"></td>
+            <td th:text="${produto.pontoSuprimento}"></td>
+            <td th:text="${produto.tickets}"></td>
+            <td th:text="${produto.categoria}"></td>
+            <td th:text="${produto.status}"></td>
+            <!-- <td th:text="${produto.status ? 'Habilitado' : 'Desabilitado'}"></td> -->
+            <td>
+                <button class="btnUpdate" th:data-id=${produto.id}>Editar</button>
+                <button class="btnDelete" th:data-id=${produto.id}>Excluir</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

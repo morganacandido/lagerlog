@@ -11,13 +11,7 @@
 <body>
 
     <div th:insert="~{fragments/navbar :: nav}"></div>
-
-    <div class="title-bar-cad">
-        <a href="#" class="nav-btn-cad">Mercadoria</a>
-        <a href="usuario/cadastrar" class="nav-btn-cad">Cadastrar Usuário</a>
-        <a href="usuario/listar" class="nav-btn-cad">Editar Usuário</a>
-
-    </div>
+    <div th:insert="~{fragments/navbarCadastros :: navCadastros}"></div>
 
     <div th:if="${mensagem}" style="color: green;">
         <p th:text="${mensagem}"></p>
