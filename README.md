@@ -25,8 +25,8 @@ localhost:8080/
 
 
 ## Autores
-Davison
-Rodrigo
-Morgana Candido
-Gabriel
-Augusto
+* Davison
+* Rodrigo
+* Morgana Candido
+* Gabriel
+* Augusto
