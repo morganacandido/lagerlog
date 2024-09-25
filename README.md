@@ -25,8 +25,8 @@ localhost:8080/
 
 
 ## Autores
-* Davison
-* Rodrigo
+* Davison Azevedo
+* Rodrigo Moraes
 * Morgana Candido
-* Gabriel
-* Augusto
+* Gabriel Baptista
+* Augusto Cruz
