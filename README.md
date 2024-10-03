@@ -5,9 +5,9 @@ Em resumo o sistema é capaz de realizar um relatório de vendas, administraçã
 
 ## Requisitos
 * Java JDK 17
-* Maven
-
-## Rodando o projeto
+* Maven ou extensões Spring Boot Dashboard para utilização em VS Code
+ 
+## Rodando o projeto com Maven
 Instalando dependências
 ```
 mvn clean install
@@ -23,22 +23,15 @@ O projeto será iniciado no localhost
 localhost:8080/
 ```
 
-## Autores
-* Davison Azevedo
-* Rodrigo Moraes
-* Morgana Candido
-* Gabriel Baptista
-* Augusto Cruz
+## Como trabalhar com o repositório forkado do GitHub no VS Code
 
-## Como trabalhar com o repositório Forkado do GitHub
-
-### Passos para clonar e configurar o projeto
+### Passos para clonar e configurar o projeto (itens 1, 2 e 3)
 
 ### 1. Fazer Fork do Repositório
 1. Acesse o repositório original no GitHub.
 2. Clique no botão **Fork** no canto superior direito da página. Isso criará uma cópia do repositório original na sua conta do GitHub.
 
-### 2. Clonar o Repositório Forkado localmente
+### 2. Clonar o Repositório forkado localmente
 1. Na sua conta, vá até o repositório forkado no GitHub e clique no botão **Code**.
 2. Copie a URL do repositório forkado (exemplo `https://github.com/seu-usuario/nome-do-repositorio.git`).
 3. Abra o Visual Studio Code e o terminal integrado (pressione `Ctrl+'`).
@@ -72,7 +65,7 @@ localhost:8080/
    upstream  https://github.com/usuario-original/nome-do-repositorio.git (push)
    ```
 
-## Fazer Modificações no Código
+## Modificações e atualizações do código no GitHub via VS Code
 1. Abra o projeto no Visual Studio Code:
    ```bash
    code .
@@ -95,16 +88,23 @@ localhost:8080/
   git push origin main
   ```
 
-7. Buscar atualizações do repositório original:**
+7. Buscar atualizações do repositório original:
   ```bash
   git fetch upstream
   ```
 
-8. Mesclar atualizações do repositório original:**
+8. Mesclar atualizações do repositório original:
   ```bash
   git merge upstream/main
   ```
 
 ## Dicas Extras:
-- Sempre mantenha o repositório forkado atualizado com o repositório original para evitar conflitos.
+- Sempre mantENHA O repositório forkado atualizado com o repositório original para evitar conflitos.
 - Utilize as mensagens de commit para detalhar as modificações feitas.
+
+## Autores
+* Davison Azevedo
+* Rodrigo Moraes
+* Morgana Candido
+* Gabriel Baptista
+* Augusto Cruz
