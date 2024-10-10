@@ -107,8 +107,9 @@ Em construção.
 - Utilize as mensagens de commit para detalhar as modificações feitas.
 
 ## Autores
-* Davison Azevedo
-* Rodrigo Moraes
-* Morgana Candido
-* Gabriel Baptista
 * Augusto Cruz
+* Davison Azevedo
+* Gabriel Baptista
+* Khaue Facklam
+* Morgana Candido
+* Rodrigo Moraes
